@@ -1,0 +1,73 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class Movie  
+{
+    int rating;
+    int year; 
+    String name;
+    Movie() {}
+    Movie(int rating, int year, String name)
+    {
+        this.rating = rating; 
+        this.name = name; 
+        this.year = year;
+    }
+    
+   
+    
+    public int compareTo(Movie m)
+    {
+        return this.rating - m.rating;
+    }
+    
+    
+}
+  
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        
+       List<Integer> list = new ArrayList<>();
+       
+     list.add(65);
+     list.add(243);
+     list.add(45234);
+     list.add(452);
+     list.add(3);
+     list.add(89);
+     
+    Collections.sort(list);
+        System.out.println(list+"\n");
+        
+        List<Movie> list2 = new ArrayList<>();
+        
+        list2.add(new Movie(3, 2000, "Titanic"));
+        list2.add(new Movie(7, 2022, "Interstellar"));
+        list2.add(new Movie(1, 2120, "Martian"));
+        list2.add(new Movie(0, 1990, "Spider Man"));
+        list2.add(new Movie(23, 2200, "Krish"));
+        
+        // lambda function: modifier, return type, name
+      /*  
+   Comparator<Movie> object = (o1,  o2)-> 
+    {
+        return o1.rating- o2.rating;
+    } ;
+    
+    */
+ 
+ 
+        
+        Collections.sort(list2, (o1,  o2)-> 
+     
+       { return o1.rating- o2.rating;}
+     );
+        
+        for(Movie obj: list2)
+        System.out.println(obj.name+" "+obj.rating+" "+obj.year+" \n");
+        
+    }
+}

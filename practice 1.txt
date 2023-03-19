@@ -1,0 +1,27 @@
+class Job implements Comparator
+{
+    int profit;
+    int time;
+    String jobId;
+    
+    Job(int time, String jobId, int profit)
+{
+    this.profit = profit;
+    this.time = time;
+    this.jobId = jobId;
+}
+}
+
+class Main
+{
+    public static void main(String args[])
+    {
+         List<Job> list = new ArrayList<>();
+         
+         list.add(new Job(1,"a",20));
+         list.add(new Job(3,"b",60));
+         list.add(new Job(2,"c",25));
+         list.add(new Job(1,"d",90));
+         list.add(new Job(1,"e",100));
+    }
+}
